@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details du Samouraï</h2>
 
 <div>
-    <h4>Samourai</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -37,6 +36,25 @@
             }
             else
             { @ViewBag.Message}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtMartiaux)
+        </dt>
+
+        <dd>
+            @if (Model.ArtMartiaux == null)
+            {
+                @ViewBag.Message2
+
+            }
+            @if (Model.ArtMartiaux != null)
+            {
+                foreach (var artmartial in Model.ArtMartiaux)
+                {
+                    @Html.DisplayFor(i => artmartial.Nom)
+                }
+            }
         </dd>
 
     </dl>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -105,6 +106,20 @@ namespace TP_Dojo_V1.Controllers
             {
                 return HttpNotFound();
             }
+
+            try
+            {
+                var samourais = db.Samourais.Where(s => s.Arme.Id == id).ToList();
+                if (samourais.Any())
+                {
+                    ViewBag.Samourais = samourais.Select(s => s.Nom).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
             return View(arme);
         }
 
@@ -114,8 +129,16 @@ namespace TP_Dojo_V1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Arme arme = db.Armes.Find(id);
+
+            //Détruit la connexion Arme/Samouraï avant de supprimer l'arme en base.
+            var samourais = db.Samourais.Where(s => s.Arme.Id == id).ToList();
+            foreach(var samourai in samourais)
+            {
+                samourai.Arme = null;
+            }
             db.Armes.Remove(arme);
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

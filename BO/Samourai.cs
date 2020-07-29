@@ -1,4 +1,5 @@
-﻿using TP_Dojo_V1.BO;
+﻿using System.Collections.Generic;
+using TP_Dojo_V1.BO;
 
 namespace BO
 {
@@ -8,6 +9,6 @@ namespace BO
         public int Force { get; set; }
         public string Nom { get; set; }
         public virtual Arme Arme { get; set; }
-        public virtual ArtMartial ArtMartial { get; set; }
+        public List <ArtMartial> ArtMartiaux { get; set; }
     }
 }

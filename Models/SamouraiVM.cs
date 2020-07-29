@@ -12,10 +12,10 @@ namespace TP_Dojo_V1.Models
     {
         public Samourai Samourai { get; set; }
 
-        public int IdSelectedArme { get; set; }
+        public int? IdSelectedArme { get; set; }
         public List<SelectListItem> Armes { get; set; } = new List<SelectListItem>();
 
         public List<SelectListItem> ArtsMartiaux { get; set; } = new List<SelectListItem>();
-        public int? IdSelectedAM { get; set; }
+        public List<int> IdSelectedAM { get; set; } = new List<int>();
     }
 }

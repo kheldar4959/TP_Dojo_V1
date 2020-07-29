@@ -15,5 +15,10 @@ namespace TP_Dojo_V1
         public DbSet<Samourai> Samourais { get; set; }
 
         public DbSet<ArtMartial> ArtMartiaux { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

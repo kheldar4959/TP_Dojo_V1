@@ -88,5 +88,5 @@ C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.SqlServer.
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.xml
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.SqlServer.xml
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csprojAssemblyReference.cache
-C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.Migrations.InitialMigration.resources
+C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.Migrations.update.resources
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csproj.GenerateResource.cache

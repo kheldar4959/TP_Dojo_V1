@@ -21,6 +21,7 @@ namespace TP_Dojo_V1.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Poings";
+            ViewBag.Message2 = "Novice";
             return View(db.Samourais.ToList());
         }
 
@@ -33,6 +34,7 @@ namespace TP_Dojo_V1.Controllers
             }
             Samourai samourai = db.Samourais.Find(id);
             ViewBag.Message = "Poings";
+            ViewBag.Message2 = "Novice";
             if (samourai == null)
             {
                 return HttpNotFound();
@@ -63,9 +65,13 @@ namespace TP_Dojo_V1.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(vm.IdSelectedArme.HasValue)
+                {
+                    vm.Samourai.Arme = db.Armes.FirstOrDefault(a => a.Id == vm.IdSelectedArme.Value);
+                }
                 Samourai samourai = vm.Samourai;
 
-                samourai.Arme = db.Armes.FirstOrDefault(x => x.Id == vm.IdSelectedArme);
+                
 
                 db.Samourais.Add(samourai);
                 db.SaveChanges();

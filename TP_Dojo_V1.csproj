@@ -133,14 +133,15 @@
     <Compile Include="BO\Samourai.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Controllers\ArmesController.cs" />
+    <Compile Include="Controllers\ArtMartialsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SamouraisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007290822024_Initial Migration.cs" />
-    <Compile Include="Migrations\202007290822024_Initial Migration.designer.cs">
-      <DependentUpon>202007290822024_Initial Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202007291031334_update.cs" />
+    <Compile Include="Migrations\202007291031334_update.designer.cs">
+      <DependentUpon>202007291031334_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SamouraiVM.cs" />
@@ -192,6 +193,11 @@
     <Content Include="Views\Samourais\Details.cshtml" />
     <Content Include="Views\Samourais\Edit.cshtml" />
     <Content Include="Views\Samourais\Index.cshtml" />
+    <Content Include="Views\ArtMartials\Create.cshtml" />
+    <Content Include="Views\ArtMartials\Delete.cshtml" />
+    <Content Include="Views\ArtMartials\Details.cshtml" />
+    <Content Include="Views\ArtMartials\Edit.cshtml" />
+    <Content Include="Views\ArtMartials\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -210,8 +216,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007290822024_Initial Migration.resx">
-      <DependentUpon>202007290822024_Initial Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007291031334_update.resx">
+      <DependentUpon>202007291031334_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
