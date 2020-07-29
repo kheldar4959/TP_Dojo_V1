@@ -48,7 +48,10 @@ namespace TP_Dojo_V1.Controllers
             vm.Armes = db.Armes.Select(
                 x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString()})
                 .ToList();
-           
+
+            vm.ArtsMartiaux = db.ArtMartiaux.Select(
+                x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() })
+                .ToList();
 
             return View(vm);
         }
@@ -73,11 +76,28 @@ namespace TP_Dojo_V1.Controllers
         }
 
         // GET: Samourais/Edit/5
-        public ActionResult Edit(SamouraiVM vm)
+        public ActionResult Edit(int? id)
         {
-            Samourai samourai = vm.Samourai;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Samourai samourai = db.Samourais.Find(id);
+            if (samourai == null)
+            {
+                return HttpNotFound();
+            }
+            var vm = new SamouraiVM();
+            vm.Armes = db.Armes.Select(
+                x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() })
+                .ToList();
+            vm.Samourai = samourai;
 
-            samourai.Arme = db.Armes.FirstOrDefault(x => x.Id == vm.IdSelectedArme);
+            if (samourai.Arme != null)
+            {
+                // Si le samourai avait une arme, on affecte l'Id de cette arme à notre VIewModel, ansi elle sera préselectionnée dans notre liste d'armes 
+                vm.IdSelectedArme = samourai.Arme.Id;
+            }
             return View(vm);
         }
 

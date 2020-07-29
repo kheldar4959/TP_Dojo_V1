@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using TP_Dojo_V1.BO;
 
 namespace TP_Dojo_V1
 {
@@ -12,5 +13,7 @@ namespace TP_Dojo_V1
         public DbSet<Arme> Armes { get; set; }
 
         public DbSet<Samourai> Samourais { get; set; }
+
+        public DbSet<ArtMartial> ArtMartiaux { get; set; }
     }
 }

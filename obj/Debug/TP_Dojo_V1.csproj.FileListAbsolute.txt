@@ -79,7 +79,6 @@ C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\fr\System.Web.Razor.resour
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csprojAssemblyReference.cache
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csproj.CoreCompileInputs.cache
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csproj.CopyComplete
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.dll
@@ -88,3 +87,6 @@ C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.dll
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.SqlServer.dll
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.xml
 C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\bin\EntityFramework.SqlServer.xml
+C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csprojAssemblyReference.cache
+C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.Migrations.InitialMigration.resources
+C:\Users\kevin\source\repos\TP_Dojo_V1\TP_Dojo_V1\obj\Debug\TP_Dojo_V1.csproj.GenerateResource.cache
