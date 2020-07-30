@@ -15,7 +15,7 @@ namespace TP_Dojo_V1.Models
         public int? IdSelectedArme { get; set; }
         public List<SelectListItem> Armes { get; set; } = new List<SelectListItem>();
 
-        public List<SelectListItem> ArtsMartiaux { get; set; } = new List<SelectListItem>();
+        public List<ArtMartial> ArtsMartiaux { get; set; } = new List<ArtMartial>();
         public List<int> IdSelectedAM { get; set; } = new List<int>();
     }
 }

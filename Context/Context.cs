@@ -18,6 +18,7 @@ namespace TP_Dojo_V1
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Samourai>().HasMany(x => x.ArtMartiaux).WithMany();
             base.OnModelCreating(modelBuilder);
         }
     }

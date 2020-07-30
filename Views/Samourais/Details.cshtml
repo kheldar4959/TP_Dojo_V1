@@ -39,6 +39,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Potentiel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Potentiel)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.ArtMartiaux)
         </dt>
 
@@ -52,7 +60,7 @@
             {
                 foreach (var artmartial in Model.ArtMartiaux)
                 {
-                    @Html.DisplayFor(i => artmartial.Nom)
+                    @Html.DisplayFor(i => artmartial.Nom) <br/>
                 }
             }
         </dd>

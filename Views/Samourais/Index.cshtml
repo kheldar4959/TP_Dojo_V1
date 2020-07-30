@@ -46,16 +46,15 @@
         }
     </td>
     <td>
-        @if (item.ArtMartiaux == null)
+        @if (item.ArtMartiaux == null || item.ArtMartiaux.Count == 0)
         {
             @ViewBag.Message2
-
         }
-        @if (item.ArtMartiaux != null)
+        else
         {
             foreach (var artmartial in item.ArtMartiaux)
             {
-            @Html.DisplayFor(i => artmartial.Nom)
+                @Html.DisplayFor(modelItem => artmartial.Nom) <br />
             }
         }
     </td>

@@ -51,9 +51,7 @@ namespace TP_Dojo_V1.Controllers
                 x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString()})
                 .ToList();
 
-            vm.ArtsMartiaux = db.ArtMartiaux.Select(
-                x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() })
-                .ToList();
+            vm.ArtsMartiaux = db.ArtMartiaux.ToList();
 
             return View(vm);
         }
@@ -69,9 +67,12 @@ namespace TP_Dojo_V1.Controllers
                 {
                     vm.Samourai.Arme = db.Armes.FirstOrDefault(a => a.Id == vm.IdSelectedArme.Value);
                 }
+            
+            if(vm.IdSelectedAM.Count > 0)
+                {
+                    vm.Samourai.ArtMartiaux = db.ArtMartiaux.Where(a => vm.IdSelectedAM.Contains(a.Id)).ToList();
+                }
                 Samourai samourai = vm.Samourai;
-
-                
 
                 db.Samourais.Add(samourai);
                 db.SaveChanges();
@@ -97,6 +98,9 @@ namespace TP_Dojo_V1.Controllers
             vm.Armes = db.Armes.Select(
                 x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() })
                 .ToList();
+            
+            vm.ArtsMartiaux = db.ArtMartiaux.ToList();
+
             vm.Samourai = samourai;
 
             if (samourai.Arme != null)
@@ -112,23 +116,33 @@ namespace TP_Dojo_V1.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Samourai samourai)
+        public ActionResult Edit(SamouraiVM vm)
         {
-            //Persist en DB les changements récupérés de la vue
-            if (ModelState.IsValid)
             {
-                var samouraiDb = db.Samourais.Find(samourai.Id);
-                samouraiDb.Force = samourai.Force;
-                samouraiDb.Nom = samourai.Nom;
-                samouraiDb.Arme = samourai.Arme;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    if (vm.IdSelectedArme.HasValue)
+                    {
+                        vm.Samourai.Arme = db.Armes.FirstOrDefault(a => a.Id == vm.IdSelectedArme.Value);
+                    }
+
+                    if (vm.IdSelectedAM.Count > 0)
+                    {
+                        vm.Samourai.ArtMartiaux = db.ArtMartiaux.Where(a => vm.IdSelectedAM.Contains(a.Id)).ToList();
+                    }
+                    Samourai samourai = vm.Samourai;
+
+                    db.Samourais.Add(samourai);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                return View(vm);
             }
-            return View(samourai);
         }
 
-        // GET: Samourais/Delete/5
-        public ActionResult Delete(int? id)
+            // GET: Samourais/Delete/5
+            public ActionResult Delete(int? id)
         {
             if (id == null)
             {

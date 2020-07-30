@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using TP_Dojo_V1.BO;
 
 namespace BO
@@ -9,6 +11,29 @@ namespace BO
         public int Force { get; set; }
         public string Nom { get; set; }
         public virtual Arme Arme { get; set; }
-        public List <ArtMartial> ArtMartiaux { get; set; }
+
+        //Virtual est nécéssaire pour obtenir le lazy loading
+        public virtual List<ArtMartial> ArtMartiaux { get; set; } = new List<ArtMartial>();
+
+
+        //Ignore Potentiel lors du mathing avec la db
+        [NotMapped]
+
+        //Permet de modifier le nom à l'affichage
+        [DisplayName("Potentiel de force")]
+         public int Potentiel
+        {
+            get
+            {
+                int potentiel = this.Force;
+                if (this.Arme != null)
+                {
+                    potentiel += this.Arme.Degats;
+                }
+                potentiel *= (this.ArtMartiaux.Count + 1);
+
+                return potentiel;
+            }
+        }
     }
 }
