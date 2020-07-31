@@ -35,7 +35,7 @@
         @Html.LabelFor(model => model.Samourai.Arme, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
 
-            @Html.DropDownListFor(model => model.IdSelectedArme, Model.Armes, new { htmlAttributes = new { @class = "control-label col-md-2" } })
+            @Html.DropDownListFor(model => model.IdSelectedArme, Model.Armes,"Aucune arme", new { htmlAttributes = new { @class = "control-label col-md-2" } })
             @Html.ValidationMessageFor(model => model.Samourai.Arme, "", new { @class = "text-danger" })
         </div>
     </div>

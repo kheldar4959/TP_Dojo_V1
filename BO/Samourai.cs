@@ -13,14 +13,13 @@ namespace BO
         public virtual Arme Arme { get; set; }
 
         //Virtual est nécéssaire pour obtenir le lazy loading
+        //Permet de modifier le nom à l'affichage
+        [DisplayName("Arts Martiaux maitrisés")]
         public virtual List<ArtMartial> ArtMartiaux { get; set; } = new List<ArtMartial>();
 
 
         //Ignore Potentiel lors du mathing avec la db
         [NotMapped]
-
-        //Permet de modifier le nom à l'affichage
-        [DisplayName("Potentiel de force")]
          public int Potentiel
         {
             get
